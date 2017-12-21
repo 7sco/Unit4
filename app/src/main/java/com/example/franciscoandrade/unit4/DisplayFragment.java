@@ -3,6 +3,7 @@ package com.example.franciscoandrade.unit4;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
  */
 public class DisplayFragment extends Fragment {
 
+    View v;
 
     public DisplayFragment() {
         // Required empty public constructor
@@ -23,7 +25,27 @@ public class DisplayFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_display, container, false);
+        v=inflater.inflate(R.layout.fragment_display, container, false);
+
+
+        TopFragment topFragment= new TopFragment();
+
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
+        fragmentManager.beginTransaction().replace(R.id.topContainer, topFragment).commit();
+
+
+        BottomFragment bottomFragment= new BottomFragment();
+
+        FragmentManager fragmentManager2 = getActivity().getSupportFragmentManager();
+
+        fragmentManager2.beginTransaction().replace(R.id.bottomContainer, bottomFragment).commit();
+
+
+
+
+        return v;
+
     }
 
 }

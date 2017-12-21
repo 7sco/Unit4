@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +18,9 @@ import android.widget.Button;
 public class MainFragment extends Fragment {
 
     View v;
+
+
+
     public MainFragment() {
         // Required empty public constructor
     }
@@ -39,8 +44,6 @@ public class MainFragment extends Fragment {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.mainFragmentContainer, displayFragment).commit();
                 fragmentManager.popBackStack();
-
-
 
             }
         });
