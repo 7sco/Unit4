@@ -28,11 +28,7 @@ public class DisplayFragment extends Fragment {
         v=inflater.inflate(R.layout.fragment_display, container, false);
 
 
-        TopFragment topFragment= new TopFragment();
 
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-
-        fragmentManager.beginTransaction().replace(R.id.topContainer, topFragment).commit();
 
 
         BottomFragment bottomFragment= new BottomFragment();
